@@ -1,0 +1,51 @@
+{
+  "name": "easy-to-change",
+  "displayName": "Easy to Change",
+  "description": "Remind yourself to think about if your code is easy to change. Inspired by The Pragmatic Programmer.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Easy to change settings",
+      "properties": {
+        "easyToChange.extraExtensions": {
+          "type": "array",
+          "default": [],
+          "description": "Add file extensions that trigger the message."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "sinon": "^19.0.2"
+  },
+  "dependencies": {
+    "sinon": "^19.0.2"
+  }
+}
