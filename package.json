@@ -1,10 +1,32 @@
 {
-  "name": "easy-to-change",
-  "displayName": "Easy to Change",
-  "description": "Remind yourself to think about if your code is easy to change. Inspired by The Pragmatic Programmer.",
+  "main": "./dist/extension.cjs",
+  "publisher": "nolanbradshaw22",
+  "module": "index.ts",
+  "dependencies": {
+    "@types/vscode": "^1.86.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@vscode/vsce": "^2.23.0",
+    "esbuild": "^0.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "bun run ./scripts/build-with-esbuild.ts",
+    "vsce-package": "bun run vsce package",
+    "package": "bun run build && bun run vsce-package",
+    "clean": "rm -r ./dist"
+  },
+  "name": "bun-vscode-extension",
   "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.96.0"
+  "description": "Get a reminder to make sure your code is easy to change when you save a file.",
+  "displayName": "Easy to Change",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nolanbradshaw/EasyToChange"
   },
   "categories": [
     "Other"
@@ -12,8 +34,6 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "type": "module",
-  "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
       "type": "object",
@@ -27,24 +47,7 @@
       }
     }
   },
-  "scripts": {
-    "compile": "bun run tsc -p .",
-    "lint": "eslint src",
-    "test": "mocha ",
-    "test:watch": "mocha --watch"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.10",
-    "@types/node": "20.x",
-    "@types/sinon": "^17.0.3",
-    "@types/vscode": "^1.96.0",
-    "@typescript-eslint/eslint-plugin": "^8.17.0",
-    "@typescript-eslint/parser": "^8.17.0",
-    "eslint": "^9.19.0",
-    "sinon": "^19.0.2",
-    "typescript": "^5.7.2"
-  },
-  "dependencies": {
-    "undici": "^7.3.0"
+  "engines": {
+    "vscode": "^1.86.0"
   }
 }

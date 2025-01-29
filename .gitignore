@@ -9,7 +9,10 @@
 
 .npm/
 
+bun.lock
+
 /dist/
+/extension/dist/
 /out/
 /build/
 

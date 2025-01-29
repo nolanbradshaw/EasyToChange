@@ -1,12 +1,10 @@
-.vscode/**
-.vscode-test/**
-src/**
-.gitignore
-.yarnrc
-vsc-extension-quickstart.md
-**/tsconfig.json
-**/eslint.config.mjs
-**/*.map
-**/*.ts
-**/.vscode-test.*
-github/**
+# Ignore everything
+*
+*/**
+
+# Whitelist what you need
+!.vscodeignore
+!dist/*
+!CHANGELOG.md
+!LICENSE.txt
+!README.md
