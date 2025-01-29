@@ -39,7 +39,7 @@ By default, EasyToChange supports editing the following file types:
 
 ## Configuring Extra File Extensions
 
-EYou can configure additional file extensions to support through VS Code settings:
+You can configure additional file extensions to support through VS Code settings:
 
 1. Open VS Code settings.
 2. Search for `Easy to Change`
