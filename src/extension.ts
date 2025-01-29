@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const allowedExtensions = getAllowedExtensions();
 
 		const fileExt = path.extname(doc.fileName).toLowerCase();
-		if (allowedExtensions.has(fileExt)){
+		if (allowedExtensions.has(fileExt)) {
 			vscode.window.showInformationMessage('Is your code easy to change?');
 		}
 	});

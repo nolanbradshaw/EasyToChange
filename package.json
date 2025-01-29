@@ -12,7 +12,8 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./out/extension.js",
+  "type": "module",
+  "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
       "type": "object",
@@ -27,25 +28,23 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint",
+    "compile": "bun run tsc -p .",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "mocha ",
+    "test:watch": "mocha --watch"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/sinon": "^17.0.3",
     "@types/vscode": "^1.96.0",
     "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.17.0",
-    "@vscode/test-cli": "^0.0.10",
-    "eslint": "^9.16.0",
-    "typescript": "^5.7.2",
-    "sinon": "^19.0.2"
+    "eslint": "^9.19.0",
+    "sinon": "^19.0.2",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "sinon": "^19.0.2"
+    "undici": "^7.3.0"
   }
 }
