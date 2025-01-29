@@ -1,15 +1,6 @@
-# EasyToChange
-
-**EasyToChange**
+# Easy to Change
 
 "Did the thing I just did make the overall system easier or harder to change? Do it when you save a file. Do it when you write a test. Do it when you fix a bug." - David Thomas, Andrew Hunt in The Pragmatic Programmer
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Supported File Extensions](#supported-file-extensions)
-- [Configuring Extra File Extensions](#configuring-extra-file-extensions)
-- [Usage](#usage)
 
 ## Installation
 
