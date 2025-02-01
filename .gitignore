@@ -9,6 +9,8 @@
 
 .npm/
 
+*.vsix
+
 bun.lock
 
 /dist/

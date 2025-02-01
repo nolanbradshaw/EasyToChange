@@ -12,7 +12,7 @@ export function getAllowedExtensions() {
 
 export function activate(context: vscode.ExtensionContext) {
 
-	const disposable = vscode.workspace.onDidSaveTextDocument((doc) => {
+	const disposable = vscode.workspace.onDidSaveTextDocument((doc: vscode.TextDocument) => {
 		const allowedExtensions = getAllowedExtensions();
 
 		const fileExt = path.extname(doc.fileName).toLowerCase();

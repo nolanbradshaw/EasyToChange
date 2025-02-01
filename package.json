@@ -1,7 +1,10 @@
 {
-  "main": "./dist/extension.cjs",
+  "main": "./dist/extension.js",
   "publisher": "nolanbradshaw22",
   "module": "index.ts",
+  "exports": {
+    "default": "./dist/extension.cjs"
+  },
   "dependencies": {
     "@types/vscode": "^1.86.0"
   },
@@ -13,14 +16,14 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "type": "module",
-  "scripts": {
+  "type": "commonjs",
+ "scripts": {
     "build": "bun run ./scripts/build-with-esbuild.ts",
     "vsce-package": "bun run vsce package",
     "package": "bun run build && bun run vsce-package",
     "clean": "rm -r ./dist"
   },
-  "name": "bun-vscode-extension",
+  "name": "easy-to-change",
   "version": "0.0.1",
   "description": "Get a reminder to make sure your code is easy to change when you save a file.",
   "displayName": "Easy to Change",

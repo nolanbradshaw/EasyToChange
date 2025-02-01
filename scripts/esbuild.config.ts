@@ -5,8 +5,8 @@ const config: BuildOptions = {
   bundle: true,
   platform: "node",
   target: "node12",
-  outdir: "./dist",
-  outbase: "./src",
+  format: "cjs",
+  outfile: "./dist/extension.cjs",
   external: ["vscode"],
   loader: {
     ".ts": "ts",
